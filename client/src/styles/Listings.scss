@@ -1,0 +1,76 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.category-list {
+  padding: 50px 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+
+  // Soft left fade from #e3f2fd to calm blue-green tones on the right
+  background: linear-gradient(
+    145deg,
+    #e3f2fd 0%,         // soft pale blue
+    #c0e6df 40%,        // light teal
+    #9cd3c4 70%,        // soft mint green
+    #6ab7a8 100%        // medium blue-green
+  );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include sm {
+    padding: 50px 20px;
+  }
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $blue;
+    cursor: pointer;
+
+    &_icon {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &:hover {
+      color: $pinkred;
+    }
+  }
+
+  .selected {
+    color: $pinkred;
+  }
+}
+
+.listings {
+  padding: 0 60px 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+
+  // Matching natural gradient for listings
+background: linear-gradient(
+  -35deg,         // Opposite of 145deg
+  #c3f1e8 0%,     // blue-green (right)
+  #b8e1d6 50%,    // minty aqua (middle)
+  #e3f2fd 100%    // soft pale blue (left)
+);
+
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include lg {
+    padding: 0 20px 120px;
+  }
+}
+

@@ -1,0 +1,55 @@
+@import "./breakpoints.scss";
+@import "./variables.scss";
+
+// Full page wrapper gradient
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  // Full-page natural gradient background
+  background: linear-gradient(
+    145deg,
+    lighten($blue, 40%) 0%,       // very soft blue
+    lighten($pinkred, 50%) 60%,   // very soft pink
+    #e6ebff 100%                  // soft light blue
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.title-list {
+  margin: 40px 100px 20px;
+  color: $blue;
+  font-size: 32px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.7); // Slight transparency for layered look
+  padding: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  @include sm {
+    margin: 30px 20px 10px;
+    font-size: 26px;
+  }
+}
+
+.list {
+  padding: 40px 100px 120px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.6); // Light overlay
+  min-height: 70vh;
+  border-top: 1px solid $lightgrey;
+  border-radius: 12px;
+
+  @include xl {
+    padding: 40px 20px 120px;
+  }
+
+  @include sm {
+    gap: 15px;
+  }
+}

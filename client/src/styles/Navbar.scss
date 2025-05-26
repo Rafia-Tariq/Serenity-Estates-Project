@@ -1,0 +1,165 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.navbar {
+  padding: 10px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #cce6ff; // light professional blue
+
+  font-family: 'Source Sans Pro', sans-serif;
+
+  @include sm {
+    padding: 10px 20px;
+  }
+
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+
+  &_search {
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: white;
+
+    input {
+      border: none;
+      outline: none;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      color: #0b0b0b;
+    }
+
+    &:hover {
+      @include shadow;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &_links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $blue;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: 'Source Sans Pro', sans-serif;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $pinkred;
+      }
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .host {
+      text-decoration: none;
+      color: $blue;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: $pinkred;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    &_account {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      border: 1px solid $grey;
+      border-radius: 30px;
+      background-color: #e6fbff;
+      gap: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        @include shadow;
+        background-color: #d1f3ff;
+
+        img {
+          border: 2px solid $blue;
+          box-shadow: 0 0 5px $blue;
+          transition: all 0.3s ease;
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    &_accountmenu {
+      position: absolute;
+      background-color: white;
+      right: 60px;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 10px 0;
+      border: 1px solid $lightgrey;
+      border-radius: 20px;
+      @include shadow;
+      z-index: 9999;
+
+      @include sm {
+        right: 20px;
+      }
+
+      a {
+        width: 100%;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: $blue;
+        font-weight: 600;
+        font-family: 'Source Sans Pro', sans-serif;
+
+        &:hover {
+          color: $pinkred;
+          background-color: rgba(217, 213, 213, 0.15);
+        }
+      }
+    }
+  }
+}
+
+.nav-arrow {
+  font-size: 18px;
+  margin-left: 5px;
+  color: $darkgrey;
+  vertical-align: middle;
+}

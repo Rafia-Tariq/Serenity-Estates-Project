@@ -1,0 +1,64 @@
+@import "../styles/variables.scss";
+@import "../styles/breakpoints.scss";
+
+.prediction {
+  background-color: $lightgrey; // Background color same as in .search
+  padding: 40px 60px 120px; // Padding same as in .search
+  background: url("../../public/assets/lightpink.jpg") center; // Background image same as in .search
+  background-size: cover; // Background size same as in .search
+  padding: 40px 60px 120px; // Padding same as in .search
+
+  @include mm {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    color: $blue;
+    margin-bottom: 20px;
+  }
+
+  .prediction-form {
+    background-color: transparent; // Background color same as in .search
+    padding: 30px 40px; // Padding same as in .search
+    border-radius: 20px; // Border radius same as in .search
+    margin-bottom: 40px; // Margin bottom same as in .search
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); // Adding box shadow for depth same as in .search
+
+    @include sm {
+      padding: 30px 20px;
+    }
+
+    div {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      input {
+        border: 1px solid $grey;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 100%;
+
+        &:focus {
+          outline: none;
+          border-color: $blue;
+        }
+      }
+    }
+
+    button {
+      @include buttonStyle;
+      margin-top: 20px;
+
+      &:hover {
+        box-shadow: 0 0 10px 3px rgb(117, 117, 117);
+      }
+    }
+  }
+}
